@@ -53,6 +53,13 @@ class GameWonFragment : Fragment() {
         }
     }
 
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when (item!!.itemId) {
+            R.id.share -> shareSuccess()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     //Creating our Share Intent
     private  fun getShareIntent() : Intent {
         val args = GameWonFragmentArgs.fromBundle(arguments!!)
